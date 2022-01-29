@@ -8,7 +8,7 @@ echo "Start hadoop dfs daemons."
 echo "Starting namenodes"
 
 hadoop-daemons.sh \
-  --config "$CONF_DIR" \
+  --config $CONF_DIR \
   --script start namenode
 
 #---------------------------------------------------------
@@ -17,7 +17,7 @@ hadoop-daemons.sh \
 echo "Starting datanodes"
 
 hadoop-daemons.sh \
-  --config "$CONF_DIR" \
+  --config $CONF_DIR \
   --script start datanode
 
 #---------------------------------------------------------
