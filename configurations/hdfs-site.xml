@@ -41,4 +41,8 @@
     <name>dfs.secondary.http.address</name>
     <value>10.32.0.1:50090</value>
   </property>
+  <property>
+    <name>dfs.webhdfs.enabled</name>
+    <value>true</value>
+  </property>
 </configuration>

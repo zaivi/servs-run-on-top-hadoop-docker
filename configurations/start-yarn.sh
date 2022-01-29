@@ -5,7 +5,7 @@
 echo "starting yarn daemons"
 
 # start resourceManager
-yarn-daemon.sh --config $CONF_DIR  start resourcemanager
+yarn-daemon.sh --config $CONF_DIR start resourcemanager
 
 # start nodeManager
-yarn-daemons.sh --config $CONF_DIR  start nodemanager
+yarn-daemon.sh --config $CONF_DIR start nodemanager
