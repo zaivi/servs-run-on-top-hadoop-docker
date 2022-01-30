@@ -24,6 +24,9 @@ ENV PATH $HADOOP_HOME/sbin:$PATH
 # CREATE DIRECTORY FOR STORING DOCUMENTS
 RUN mkdir /home/hadoop /home/hadoop/hdfs
 RUN mkdir /home/hadoop/tmp /home/hadoop/hdfs/namenode /home/hadoop/hdfs/datanode
+RUN chmod 777 /home/hadoop/hdfs/namenode
+RUN chmod 777 /home/hadoop/tmp
+RUN chmod 777 /home/hadoop/hdfs/datanode
 
 ADD configurations/start-dfs.sh $HADOOP_HOME/sbin
 ADD configurations/stop-dfs.sh $HADOOP_HOME/sbin

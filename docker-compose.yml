@@ -7,11 +7,11 @@ services:
     container_name: slave1
     networks:
       default:
-        ipv4_address: 172.16.0.3
+        ipv4_address: 172.10.0.3
     extra_hosts:
-      - "master: 172.16.0.2"
-      - "slave2: 172.16.0.4"
-    command: bash -c  " hadoop-daemon.sh --config /usr/local/hadoop/etc/hadoop start datanode && yarn-daemon.sh --config /usr/local/hadoop/etc/hadoop start nodemanager && tail -f /dev/null"
+      - "master: 172.10.0.2"
+      - "slave2: 172.10.0.4"
+    command: bash -c  "hadoop-daemon.sh --config /usr/local/hadoop/etc/hadoop start datanode && yarn-daemon.sh --config /usr/local/hadoop/etc/hadoop start nodemanager && tail -f /dev/null"
     hostname: slave1
     restart: always
   slave2:
@@ -21,11 +21,11 @@ services:
     container_name: slave2
     networks:
       default:
-        ipv4_address: 172.16.0.4
+        ipv4_address: 172.10.0.4
     extra_hosts:
-      - "master: 172.16.0.2"
-      - "slave1: 172.16.0.3"
-    command: bash -c  " hadoop-daemon.sh --config /usr/local/hadoop/etc/hadoop start datanode && yarn-daemon.sh --config /usr/local/hadoop/etc/hadoop start nodemanager && tail -f /dev/null"
+      - "master: 172.10.0.2"
+      - "slave1: 172.10.0.3"
+    command: bash -c  "hadoop-daemon.sh --config /usr/local/hadoop/etc/hadoop start datanode && yarn-daemon.sh --config /usr/local/hadoop/etc/hadoop start nodemanager && tail -f /dev/null"
     hostname: slave2
     restart: always
   master:
@@ -37,11 +37,11 @@ services:
     container_name: master
     networks:
       default:
-        ipv4_address: 172.16.0.2
+        ipv4_address: 172.10.0.2
     extra_hosts:
-      - "slave1: 172.16.0.3"
-      - "slave2: 172.16.0.4"
-    command: bash -c  " start-dfs.sh && start-yarn.sh && mr-jobhistory-daemon.sh start historyserver && tail -f /dev/null"
+      - "slave1: 172.10.0.3"
+      - "slave2: 172.10.0.4"
+    command: bash -c  "start-dfs.sh && start-yarn.sh && mr-jobhistory-daemon.sh start historyserver && tail -f /dev/null"
     ports:
       - 50070:50070
       - 8088:8088
