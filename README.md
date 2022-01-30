@@ -28,8 +28,8 @@
    * *docker network create --driver bridge hadoop-network --subnet=172.10.0.0/16*
 * Step 2: Build image and run containers
    * *docker-compose up*
-* Step 3: Check whether containers is running which are daemons of Hadoop cluster
-   * *docker container -ls*
+* Step 3: Check whether containers are running which are daemons of Hadoop cluster
+   * *docker container ls*
 
 ***If want to end sessions, run***
    * *docker-compose down*
