@@ -37,6 +37,6 @@
 * Attach node of HDFS cluster
    * *docker exec -it master/slave1/slave2/... /bin/bash*
 * Check daemons UI
-   * For ResourceManager (YARN): http://localhost:8080/
-   * For master (namenode): http://localhost:50070/
-   * For slave (datanode): http://localhost:50075/
+   * For Resource Manager (YARN): http://localhost:8080/
+   * For Spark Job Management: http://localhost:4040/
+   * For Master Management (Namenode): http://localhost:50070/
