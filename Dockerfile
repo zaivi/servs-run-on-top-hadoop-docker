@@ -39,3 +39,9 @@ ADD configurations/yarn-site.xml $HADOOP_HOME/etc/hadoop/yarn-site.xml
 ADD configurations/slaves $HADOOP_HOME/etc/hadoop/slaves
 
 ENV PATH $HADOOP_HOME/bin:$PATH
+
+
+# FORMAT NAMENODE
+ARG FORMAT_NAMENODE_COMMAND
+RUN $FORMAT_NAMENODE_COMMAND
+EXPOSE 22
