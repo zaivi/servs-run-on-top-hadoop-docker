@@ -14,6 +14,10 @@
         <td>3.0.0</td>
     </tr>
    <tr>
+        <td>HBase</td>
+        <td>2.3.7</td>
+    </tr>
+   <tr>
         <td>Docker</td>
         <td>20.10.12</td>
     </tr>
@@ -39,4 +43,5 @@
 * Check daemons UI
    * For Resource Manager (YARN): http://localhost:8080/
    * For Spark Job Management: http://localhost:4040/
+   * For HBase Management: http://localhost:16010/
    * For Master Management (Namenode): http://localhost:50070/
