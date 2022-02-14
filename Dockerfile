@@ -21,7 +21,7 @@ ENV CONF_DIR $HADOOP_HOME/etc/hadoop
 ENV PATH $HADOOP_HOME/sbin:$PATH
 
 
-# CREATE DIRECTORY FOR STORING DOCUMENTS
+# HADOOP - CREATE DIRECTORY FOR STORING DOCUMENTS
 RUN mkdir /home/hadoop /home/hadoop/hdfs
 RUN mkdir /home/hadoop/tmp /home/hadoop/hdfs/namenode /home/hadoop/hdfs/datanode
 RUN chmod 777 /home/hadoop/hdfs/namenode
@@ -39,6 +39,17 @@ ADD configurations/yarn-site.xml $HADOOP_HOME/etc/hadoop/yarn-site.xml
 ADD configurations/slaves $HADOOP_HOME/etc/hadoop/slaves
 
 ENV PATH $HADOOP_HOME/bin:$PATH
+
+
+# SPARK
+RUN wget https://archive.apache.org/dist/spark/spark-3.0.0/spark-3.0.0-bin-hadoop2.7.tgz
+RUN tar xvf spark-3.0.0-bin-hadoop2.7.tgz
+RUN mv spark-3.0.0-bin-hadoop2.7 /usr/local/spark
+ENV SPARK_HOME /usr/local/spark
+ENV PATH $SPARK_HOME/sbin:$PATH
+ENV PATH $SPARK_HOME/bin:$PATH
+
+ADD configurations/slaves $SPARK_HOME/conf/slaves
 
 
 # FORMAT NAMENODE
