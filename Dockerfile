@@ -52,6 +52,16 @@ ENV PATH $SPARK_HOME/bin:$PATH
 ADD configurations/slaves $SPARK_HOME/conf/slaves
 
 
+# HBASE
+RUN wget https://downloads.apache.org/hbase/2.3.7/hbase-2.3.7-bin.tar.gz
+RUN tar xvf hbase-2.3.7-bin.tar.gz
+RUN mv hbase-2.3.7 /usr/local/hbase
+ENV HBASE_HOME /usr/local/hbase
+ENV PATH $HBASE_HOME/bin:$PATH
+
+ADD configurations/hbase-site.xml $HADOOP_HOME/conf/hbase-site.xml
+
+
 # FORMAT NAMENODE
 ARG FORMAT_NAMENODE_COMMAND
 RUN $FORMAT_NAMENODE_COMMAND
