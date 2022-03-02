@@ -11,7 +11,7 @@ services:
     extra_hosts:
       - "master: 172.10.0.2"
       - "slave2: 172.10.0.4"
-    command: bash -c  "hadoop-daemon.sh --config /usr/local/hadoop/etc/hadoop start datanode && yarn-daemon.sh --config /usr/local/hadoop/etc/hadoop start nodemanager && start-slave.sh master:7077 && tail -f /dev/null"
+    command: bash -c  "hadoop-daemon.sh --config /usr/local/hadoop/etc/hadoop start datanode && yarn-daemon.sh --config /usr/local/hadoop/etc/hadoop start nodemanager && tail -f /dev/null"
     hostname: slave1
     restart: always
   slave2:
@@ -25,7 +25,7 @@ services:
     extra_hosts:
       - "master: 172.10.0.2"
       - "slave1: 172.10.0.3"
-    command: bash -c  "hadoop-daemon.sh --config /usr/local/hadoop/etc/hadoop start datanode && yarn-daemon.sh --config /usr/local/hadoop/etc/hadoop start nodemanager && start-slave.sh master:7077 && tail -f /dev/null"
+    command: bash -c  "hadoop-daemon.sh --config /usr/local/hadoop/etc/hadoop start datanode && yarn-daemon.sh --config /usr/local/hadoop/etc/hadoop start nodemanager && tail -f /dev/null"
     hostname: slave2
     restart: always
   master:
@@ -41,7 +41,7 @@ services:
     extra_hosts:
       - "slave1: 172.10.0.3"
       - "slave2: 172.10.0.4"
-    command: bash -c  "start-dfs.sh && start-yarn.sh && mr-jobhistory-daemon.sh start historyserver && start-master.sh && start-hbase.sh && tail -f /dev/null"
+    command: bash -c  "start-dfs.sh && start-yarn.sh && mr-jobhistory-daemon.sh start historyserver && tail -f /dev/null"
     ports:
       - 50070:50070
       - 8088:8088
