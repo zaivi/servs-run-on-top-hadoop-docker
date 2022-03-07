@@ -41,25 +41,25 @@ ADD configurations/slaves $HADOOP_HOME/etc/hadoop/slaves
 ENV PATH $HADOOP_HOME/bin:$PATH
 
 
-# # SPARK
-# RUN wget https://archive.apache.org/dist/spark/spark-3.0.0/spark-3.0.0-bin-hadoop2.7.tgz
-# RUN tar xvf spark-3.0.0-bin-hadoop2.7.tgz
-# RUN mv spark-3.0.0-bin-hadoop2.7 /usr/local/spark
-# ENV SPARK_HOME /usr/local/spark
-# ENV PATH $SPARK_HOME/sbin:$PATH
-# ENV PATH $SPARK_HOME/bin:$PATH
+# SPARK
+RUN wget https://archive.apache.org/dist/spark/spark-3.0.0/spark-3.0.0-bin-hadoop2.7.tgz
+RUN tar xvf spark-3.0.0-bin-hadoop2.7.tgz
+RUN mv spark-3.0.0-bin-hadoop2.7 /usr/local/spark
+ENV SPARK_HOME /usr/local/spark
+ENV PATH $SPARK_HOME/sbin:$PATH
+ENV PATH $SPARK_HOME/bin:$PATH
 
-# ADD configurations/slaves $SPARK_HOME/conf/slaves
+ADD configurations/slaves $SPARK_HOME/conf/slaves
 
 
-# # HBASE
-# RUN wget https://downloads.apache.org/hbase/2.3.7/hbase-2.3.7-bin.tar.gz
-# RUN tar xvf hbase-2.3.7-bin.tar.gz
-# RUN mv hbase-2.3.7 /usr/local/hbase
-# ENV HBASE_HOME /usr/local/hbase
-# ENV PATH $HBASE_HOME/bin:$PATH
+# HBASE
+RUN wget https://downloads.apache.org/hbase/2.3.7/hbase-2.3.7-bin.tar.gz
+RUN tar xvf hbase-2.3.7-bin.tar.gz
+RUN mv hbase-2.3.7 /usr/local/hbase
+ENV HBASE_HOME /usr/local/hbase
+ENV PATH $HBASE_HOME/bin:$PATH
 
-# ADD configurations/hbase-site.xml $HADOOP_HOME/conf/hbase-site.xml
+ADD configurations/hbase-site.xml $HADOOP_HOME/conf/hbase-site.xml
 
 
 # FORMAT NAMENODE
