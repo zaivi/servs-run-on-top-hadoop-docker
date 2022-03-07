@@ -2,6 +2,7 @@
 
 ## Overview
 * The project try to simulate it to resemble reality with 3 containers corresponding to 3 deamons in ***Hadoop Cluster*** which are 1 master and 2 slaves. Moreover, we can easily integrate other services run on top Hadoop such as: processing, manipulating, indexing, ... For instance, system is already integrated with Spark, HBase and the rest is for you.
+* For more details of instruction, please follow this guide: [guide.pdf](guide/guide.pdf)
 * This project uses:
     * Version 
     <table>
