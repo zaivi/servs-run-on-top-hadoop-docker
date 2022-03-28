@@ -18,7 +18,7 @@
 <configuration>
     <property>
         <name>hbase.rootdir</name>
-        <value>hdfs://localhost:9000/hbase</value>
+        <value>hdfs://master:9000/hbase</value>
     </property>
 
     <property>
