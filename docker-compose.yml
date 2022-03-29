@@ -48,9 +48,9 @@ services:
       - 8080:8080
       - 4040:4040
       - 16010:16010
-      - 8032:8032
     hostname: master
     restart: always
 networks:
   default:
-      name: hadoop-network
+      external:
+        name: hadoop-network
