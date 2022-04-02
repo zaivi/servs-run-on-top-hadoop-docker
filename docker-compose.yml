@@ -41,7 +41,7 @@ services:
     extra_hosts:
       - "slave1: 172.10.0.3"
       - "slave2: 172.10.0.4"
-    command: bash -c  "start-dfs.sh && start-yarn.sh && mr-jobhistory-daemon.sh start historyserver && tail -f /dev/null"
+    command: bash -c  "start-dfs.sh && start-yarn.sh && mr-jobhistory-daemon.sh start historyserver && start-hbase.sh && tail -f /dev/null"
     ports:
       - 50070:50070
       - 8088:8088

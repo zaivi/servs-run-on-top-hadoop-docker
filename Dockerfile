@@ -52,14 +52,16 @@ ENV PATH $HADOOP_HOME/bin:$PATH
 # ADD configurations/slaves $SPARK_HOME/conf/slaves
 
 
-# # HBASE
-# RUN wget https://downloads.apache.org/hbase/2.4.11/hbase-2.4.11-bin.tar.gz
-# RUN tar xvf hbase-2.4.11-bin.tar.gz
-# RUN mv hbase-2.4.11 /usr/local/hbase
-# ENV HBASE_HOME /usr/local/hbase
-# ENV PATH $HBASE_HOME/bin:$PATH
+# HBASE
+RUN wget https://downloads.apache.org/hbase/2.4.11/hbase-2.4.11-bin.tar.gz
+RUN tar xvf hbase-2.4.11-bin.tar.gz
+RUN mv hbase-2.4.11 /usr/local/hbase
+RUN mkdir /usr/local/zookeeper
+RUN chmod 777 /usr/local/zookeeper
+ENV HBASE_HOME /usr/local/hbase
+ENV PATH $HBASE_HOME/bin:$PATH
 
-# ADD configurations/hbase-site.xml $HADOOP_HOME/conf/hbase-site.xml
+ADD configurations/hbase-site.xml $HADOOP_HOME/conf/hbase-site.xml
 
 
 # FORMAT NAMENODE
