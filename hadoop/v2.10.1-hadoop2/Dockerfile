@@ -28,15 +28,15 @@ RUN chmod 777 /home/hadoop/hdfs/namenode
 RUN chmod 777 /home/hadoop/tmp
 RUN chmod 777 /home/hadoop/hdfs/datanode
 
-ADD hadoop/v2.10.1-hadoop2/configurations/configurations/start-dfs.sh $HADOOP_HOME/sbin
-ADD hadoop/v2.10.1-hadoop2/configurations/configurations/stop-dfs.sh $HADOOP_HOME/sbin
-ADD hadoop/v2.10.1-hadoop2/configurations/configurations/start-yarn.sh $HADOOP_HOME/sbin
-ADD hadoop/v2.10.1-hadoop2/configurations/configurations/stop-yarn.sh $HADOOP_HOME/sbin
-ADD hadoop/v2.10.1-hadoop2/configurations/configurations/core-site.xml $HADOOP_HOME/etc/hadoop/core-site.xml
-ADD hadoop/v2.10.1-hadoop2/configurations/configurations/hdfs-site.xml $HADOOP_HOME/etc/hadoop/hdfs-site.xml
-ADD hadoop/v2.10.1-hadoop2/configurations/configurations/mapred-site.xml $HADOOP_HOME/etc/hadoop/mapred-site.xml
-ADD hadoop/v2.10.1-hadoop2/configurations/configurations/yarn-site.xml $HADOOP_HOME/etc/hadoop/yarn-site.xml
-ADD hadoop/v2.10.1-hadoop2/configurations/configurations/slaves $HADOOP_HOME/etc/hadoop/slaves
+ADD hadoop/v2.10.1-hadoop2/configurations/start-dfs.sh $HADOOP_HOME/sbin
+ADD hadoop/v2.10.1-hadoop2/configurations/stop-dfs.sh $HADOOP_HOME/sbin
+ADD hadoop/v2.10.1-hadoop2/configurations/start-yarn.sh $HADOOP_HOME/sbin
+ADD hadoop/v2.10.1-hadoop2/configurations/stop-yarn.sh $HADOOP_HOME/sbin
+ADD hadoop/v2.10.1-hadoop2/configurations/core-site.xml $HADOOP_HOME/etc/hadoop/core-site.xml
+ADD hadoop/v2.10.1-hadoop2/configurations/hdfs-site.xml $HADOOP_HOME/etc/hadoop/hdfs-site.xml
+ADD hadoop/v2.10.1-hadoop2/configurations/mapred-site.xml $HADOOP_HOME/etc/hadoop/mapred-site.xml
+ADD hadoop/v2.10.1-hadoop2/configurations/yarn-site.xml $HADOOP_HOME/etc/hadoop/yarn-site.xml
+ADD hadoop/v2.10.1-hadoop2/configurations/slaves $HADOOP_HOME/etc/hadoop/slaves
 
 ENV PATH $HADOOP_HOME/bin:$PATH
 
@@ -61,7 +61,7 @@ RUN chmod 777 /usr/local/zookeeper
 ENV HBASE_HOME /usr/local/hbase
 ENV PATH $HBASE_HOME/bin:$PATH
 
-ADD hadoop/v2.10.1-hadoop2/configurations/configurations/hbase-site.xml $HADOOP_HOME/conf/hbase-site.xml
+ADD hadoop/v2.10.1-hadoop2/configurations/hbase-site.xml $HADOOP_HOME/conf/hbase-site.xml
 
 
 # FORMAT NAMENODE
