@@ -28,15 +28,15 @@ RUN chmod 777 /home/hadoop/hdfs/namenode
 RUN chmod 777 /home/hadoop/tmp
 RUN chmod 777 /home/hadoop/hdfs/datanode
 
-ADD configurations/start-dfs.sh $HADOOP_HOME/sbin
-ADD configurations/stop-dfs.sh $HADOOP_HOME/sbin
-ADD configurations/start-yarn.sh $HADOOP_HOME/sbin
-ADD configurations/stop-yarn.sh $HADOOP_HOME/sbin
-ADD configurations/core-site.xml $HADOOP_HOME/etc/hadoop/core-site.xml
-ADD configurations/hdfs-site.xml $HADOOP_HOME/etc/hadoop/hdfs-site.xml
-ADD configurations/mapred-site.xml $HADOOP_HOME/etc/hadoop/mapred-site.xml
-ADD configurations/yarn-site.xml $HADOOP_HOME/etc/hadoop/yarn-site.xml
-ADD configurations/slaves $HADOOP_HOME/etc/hadoop/slaves
+ADD ./configurations/start-dfs.sh $HADOOP_HOME/sbin
+ADD ./configurations/stop-dfs.sh $HADOOP_HOME/sbin
+ADD ./configurations/start-yarn.sh $HADOOP_HOME/sbin
+ADD ./configurations/stop-yarn.sh $HADOOP_HOME/sbin
+ADD ./configurations/core-site.xml $HADOOP_HOME/etc/hadoop/core-site.xml
+ADD ./configurations/hdfs-site.xml $HADOOP_HOME/etc/hadoop/hdfs-site.xml
+ADD ./configurations/mapred-site.xml $HADOOP_HOME/etc/hadoop/mapred-site.xml
+ADD ./configurations/yarn-site.xml $HADOOP_HOME/etc/hadoop/yarn-site.xml
+ADD ./configurations/slaves $HADOOP_HOME/etc/hadoop/slaves
 
 ENV PATH $HADOOP_HOME/bin:$PATH
 
@@ -61,7 +61,7 @@ RUN chmod 777 /usr/local/zookeeper
 ENV HBASE_HOME /usr/local/hbase
 ENV PATH $HBASE_HOME/bin:$PATH
 
-ADD configurations/hbase-site.xml $HADOOP_HOME/conf/hbase-site.xml
+ADD ./configurations/hbase-site.xml $HADOOP_HOME/conf/hbase-site.xml
 
 
 # FORMAT NAMENODE
