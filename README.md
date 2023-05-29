@@ -27,7 +27,28 @@
         <td>1.8</td>
     </tr>
    </table>
- 
+   
+## Image information
+
+The image is built from Hadoop, Spark, Hbase base.
+
+## Usage
+
+## Pull image from Docker hub registry
+- https://hub.docker.com/r/phanvigiaii/hadoop-v2.10.1
+
+
+```
+docker pull phanvigiaii/hadoop-v2.10.1:master
+```
+
+## Pull image from Github Packages registry
+- https://github.com/zaivi/servs-run-on-top-hadoop-docker/pkgs/container/servs-run-on-top-hadoop-docker/versions
+
+```
+docker pull ghcr.io/zaivi/servs-run-on-top-hadoop-docker:master
+```
+
 ## Build & Run project
 * Step 1: Create subnets and bridge for ***hadoop-network***
    * *docker network create --driver bridge hadoop-network --subnet=172.10.0.0/16*
