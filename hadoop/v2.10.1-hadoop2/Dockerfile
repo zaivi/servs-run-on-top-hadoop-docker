@@ -42,14 +42,14 @@ ENV PATH $HADOOP_HOME/bin:$PATH
 
 
 # # SPARK
-# RUN wget https://archive.apache.org/dist/spark/spark-3.0.0/spark-3.0.0-bin-hadoop2.7.tgz
-# RUN tar xvf spark-3.0.0-bin-hadoop2.7.tgz
-# RUN mv spark-3.0.0-bin-hadoop2.7 /usr/local/spark
-# ENV SPARK_HOME /usr/local/spark
-# ENV PATH $SPARK_HOME/sbin:$PATH
-# ENV PATH $SPARK_HOME/bin:$PATH
+RUN wget https://archive.apache.org/dist/spark/spark-3.0.0/spark-3.0.0-bin-hadoop2.7.tgz
+RUN tar xvf spark-3.0.0-bin-hadoop2.7.tgz
+RUN mv spark-3.0.0-bin-hadoop2.7 /usr/local/spark
+ENV SPARK_HOME /usr/local/spark
+ENV PATH $SPARK_HOME/sbin:$PATH
+ENV PATH $SPARK_HOME/bin:$PATH
 
-# ADD configurations/slaves $SPARK_HOME/conf/slaves
+ADD hadoop/v2.10.1-hadoop2/configurations/slaves $SPARK_HOME/conf/slaves
 
 
 # HBASE
