@@ -1,4 +1,5 @@
-FROM ubuntu
+FROM ubuntu:16.04
+
 RUN apt update && apt install -y openssh-server openssh-client vim openjdk-8-jdk
 RUN apt update && apt install -y python3-pip && pip3 install mrjob
 
@@ -67,7 +68,8 @@ ADD hadoop/v2.10.1-hadoop2/configurations/hbase-site.xml $HADOOP_HOME/conf/hbase
 # HIVE
 ENV HIVE_HOME /opt/hive
 RUN HIVE_VERSION=3.1.3 && mkdir -p ${HIVE_HOME} \
-    && wget https://archive.apache.org/dist/hive/hive-${HIVE_VERSION}/apache-hive-${HIVE_VERSION}-bin.tar.gz | tar xz --no-same-owner --strip-components=1 -C $HIVE_HOME
+    && wget https://archive.apache.org/dist/hive/hive-${HIVE_VERSION}/apache-hive-${HIVE_VERSION}-bin.tar.gz 
+RUN tar xvf apache-hive-3.1.3-bin.tar.gz
 
 
 # FORMAT NAMENODE
