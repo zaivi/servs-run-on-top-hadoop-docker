@@ -11,6 +11,10 @@
         <td>2.10.1</td>
     </tr>
    <tr>
+        <td>Hive</td>
+        <td>3.1.3</td>
+    </tr>
+   <tr>
         <td>Spark</td>
         <td>3.0.0</td>
     </tr>
